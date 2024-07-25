@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import UserCard from "./UserCard"
 
-export default function UserList() {  
+export default function UserList(props) {  
+    console.log(props.children)
     const { data, error, isLoading } = useUserData()
     if(isLoading) return <Loader />
     
@@ -17,22 +18,20 @@ export function useUserData() {
     const [ error, setError] = useState(null)
     const [ isLoading, setIsLoading ] = useState(false)
     
-    useEffect(async () => {
+    useEffect(() => {
         setIsLoading(true)
         
-        try {
-            const response = await fetch(url)
-            if(!response.ok) throw new Error(response.statusText)
-            const data = await response.json()
-            setUsersData(data)    
-        } catch (error) {
-            setError(error)
-        }
-        setIsLoading(false)
+            fetch(url)
+                .then(response => {
+                    if(!response.ok) throw new Error(response.statusText)
+                        return response.json()
+                })
+                .then(data => setUsersData(data))
+                .catch(error => setError(error))
+                .finally(() => {
+                    setIsLoading(false)
+                })
         
-        return function cleanup() {
-            console.log("CLEAN UP")
-        }
     }, [])
 
     return { data: usersData, error,isLoading}
