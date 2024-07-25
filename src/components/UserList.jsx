@@ -10,8 +10,8 @@ export default function UserList() {
     return data.map(user => <UserCard name={user.name} avatar={user.avatar} />)
 }
 
-function useUserData() {
-    const url = "https://66a1ab237053166bcabfl762b.mockapi.io/users"
+export function useUserData() {
+    const url = "https://66a1ab237053166bcabf762b.mockapi.io/users"
     
     const [ usersData, setUsersData] = useState([])
     const [ error, setError] = useState(null)
