@@ -146,3 +146,8 @@ Whenever `setColor` is called, React triggers a re-render
 - [Principles for structuring state](https://react.dev/learn/choosing-the-state-structure#principles-for-structuring-state)
 - [State Machines in React](https://mastery.games/post/state-machines-in-react/) - Even if you don't use xstate library, this article digs deeper into how using state machines concepts help us structure our states better
 - [Extracting state logic into a reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer) - Don't jump into using Redux/mobX without reading this first
+
+## Useful and well-maintained libraries
+- [React Hook Form](https://react-hook-form.com/) - Performant form library that uses W3C standard form validations
+- [TanStack Query](https://tanstack.com/query/v3) - A data fetching library that makes it easy to fetch data declaratively, cache, implement pagination etc.
+- [Vite](https://vitejs.dev/guide/) - A better boilerplate than CRA that is used in production by most companies.
