@@ -14,6 +14,8 @@ function UserList({ users }) {
       </ul>
   );
 };
+
+<UserList users={users} />
 ```
 
 This code is equivalent to the following pure JavaScript code:
@@ -28,6 +30,8 @@ function PureJSUserList ({ users }) {
   `;
   return usersElement;
 };
+
+PureJSUserList({users})
 ```
 **NOTE**: This is just an example of how we would have implemented it without JSX using plain JS
 
